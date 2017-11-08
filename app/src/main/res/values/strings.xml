@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherMania</string>
+    <string name="api_url">http://api.openweathermap.org/data/2.5/weather?q=</string>
+    <string name="api_key">51cff1995c328960306865dd5b38039f</string>
 </resources>
