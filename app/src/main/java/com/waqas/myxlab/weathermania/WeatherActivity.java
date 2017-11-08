@@ -22,6 +22,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class WeatherActivity extends AppCompatActivity {
 
 
@@ -42,7 +43,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         // http://api.openweathermap.org/data/2.5/weather?q=Khartoum&appid=51cff1995c328960306865dd5b38039f
         String url= getResources().getString(R.string.api_url)
-                +"Khartoum&appid="+
+                +"Khartoum&units=metric&appid="+
                 getResources().getString(R.string.api_key);
 
         final Animation animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
@@ -65,28 +66,23 @@ public class WeatherActivity extends AppCompatActivity {
                         // Do something with response
                         Log.e("Res",response.toString());
                         setDay();
-                        /*try {
+                        try {
                             JSONArray jsonArray = response.getJSONArray("weather");
                             for (int i =0; i< jsonArray.length(); i++){
                                 JSONObject weatherdata = jsonArray.getJSONObject(i);
                                 String condition = weatherdata.getString("main");
                                 tvCondition.setText(condition);
                             }
-
                             JSONObject main = response.getJSONObject("main");
                             double celsius = Double.parseDouble(main.getString("temp"));
                             int a = (int) Math.round(celsius);
                             //double  celsius =(( 5 *(fahrenheit - 32.0)) / 9.0);
                             tvTemp.setText(a+" C"+"\u00b0");
-
-
                             String name = response.getString("name");
                             tvCity.setText(name);
-
-
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }*/
+                        }
                     }
                 },
                 new Response.ErrorListener(){
