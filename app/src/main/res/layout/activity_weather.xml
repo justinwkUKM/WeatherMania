@@ -1,17 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.waqas.myxlab.weathermania.WeatherActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        app:srcCompat="@drawable/back"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageViewBack"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/lightning"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
+        android:id="@+id/imageViewIcon" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="30dp" >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:padding="10dp"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="DAY"
+               android:id="@+id/textViewDay"
+               android:textSize="22sp"
+               android:textColor="@color/colorPrimary"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentLeft="true"
+
+               />
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Condition"
+               android:textSize="18sp"
+               android:textColor="@color/colorPrimary"
+               android:id="@+id/textViewCondition"
+               android:layout_below="@id/textViewDay"
+
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Temp"
+               android:id="@+id/textViewTemp"
+               android:textSize="40sp"
+               android:textStyle="bold"
+               android:textColor="@color/colorPrimary"
+               android:layout_centerInParent="true"
+
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="City"
+               android:id="@+id/textViewCity"
+               android:textSize="22sp"
+               android:textColor="@color/colorPrimary"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentRight="true"
+
+               />
+
+
+
+
+       </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
 </RelativeLayout>
