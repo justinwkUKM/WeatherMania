@@ -88,6 +88,24 @@
 
 
 
+           <EditText
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:layout_alignParentLeft="true"
+               android:id="@+id/etCityName"
+               android:ems="10"
+               />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/btGetWeather"
+    android:text="GetWeather"
+    android:layout_above="@id/etCityName"
+
+    />
+
+
 
        </RelativeLayout>
 

@@ -3,8 +3,11 @@ package com.waqas.myxlab.weathermania;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +32,8 @@ public class WeatherActivity extends AppCompatActivity {
     TextView tvDay, tvCondition, tvTemp, tvCity;
     ImageView imageView;
 
+    Button btGetWeather;
+    EditText etCity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,8 @@ public class WeatherActivity extends AppCompatActivity {
         tvCondition= (TextView) findViewById(R.id.textViewCondition);
         tvTemp= (TextView) findViewById(R.id.textViewTemp);
         tvCity= (TextView) findViewById(R.id.textViewCity);
-
+        etCity= (EditText) findViewById(R.id.etCityName);
+        btGetWeather= (Button) findViewById(R.id.btGetWeather);
         imageView= (ImageView) findViewById(R.id.imageViewIcon);
 
         // http://api.openweathermap.org/data/2.5/weather?q=Khartoum&appid=51cff1995c328960306865dd5b38039f
@@ -49,6 +55,23 @@ public class WeatherActivity extends AppCompatActivity {
         final Animation animationFadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein);
         imageView.setAnimation(animationFadeIn);
         getWeatherData(url);
+
+
+
+        btGetWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userCity = etCity.getText().toString();
+                String url= getResources().getString(R.string.api_url)
+                        +userCity+"&units=metric&appid="+
+                        getResources().getString(R.string.api_key);
+
+                final Animation animationFadeIn = AnimationUtils.loadAnimation(WeatherActivity.this, R.anim.fadein);
+                imageView.setAnimation(animationFadeIn);
+                getWeatherData(url);
+            }
+        });
+
 
     }
 
